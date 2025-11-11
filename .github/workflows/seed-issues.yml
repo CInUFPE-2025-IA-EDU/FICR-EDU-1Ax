@@ -1,0 +1,32 @@
+name: Seed Issues
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        type: boolean
+        description: "Simulação (não cria issues)?"
+        default: true
+      file:
+        type: string
+        description: "Caminho do Excel"
+        default: backlog/ISSUE.xlsx
+jobs:
+  seed:
+    runs-on: ubuntu-latest
+    permissions: { contents: read, issues: write }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - run: pip install pandas requests openpyxl
+      - name: Run seed
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: |
+          python tools/seed_issues_from_excel.py --file "${{ github.event.inputs.file }}" $([ "${{ github.event.inputs.dry_run }}" = "true" ] && echo "--dry-run" || echo "")
+      - uses: actions/upload-artifact@v4
+        with:
+          name: seed-report
+          path: seed-report.csv
+          if-no-files-found: error

@@ -1,0 +1,20 @@
+name: PR autolabel
+on:
+  pull_request_target:
+    types: [opened, reopened, synchronize, edited]
+permissions: { pull-requests: write, contents: read }
+jobs:
+  label:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Label by branch
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REF: ${{ github.event.pull_request.head.ref }}
+          REPO: ${{ github.repository }}
+          PR: ${{ github.event.pull_request.number }}
+        run: |
+          if [[ "$REF" =~ ^feat/aluno-([^/-]+)-.+-(COMIA|SEMIA)$ ]]; then
+            ID="${BASH_REMATCH[1]}"; IA="${BASH_REMATCH[2]}"
+            gh api repos/$REPO/issues/$PR/labels -f labels="IdAluno:${ID}" -f labels="IA:${IA}"
+          fi
