@@ -1,4 +1,59 @@
-<!doctype html><meta charset='utf-8'><title>Relatórios e Estatísticas</title>
-<div id='app'>Relatórios e Estatísticas</div>
-<script type='module' src='./app.js'></script>
-<link rel='stylesheet' href='./style.css'>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatórios e Estatísticas</title>
+    <link rel='stylesheet' href='./style.css'>
+</head>
+<body>
+
+    <section class="kpi-card">
+     <div class="kpi-titulo">Vendas totais do mês:</div> 
+    <div class="kpi-valor">R$ 15.450,00.</div>
+    <div class="kpi-tendencia positiva">
+        +5% em relação ao mês enterior
+     
+    </div>
+</div>
+</section>
+<section class="kpi-card">
+    <div class="kpi-titulo"> taxa de conversão</div>
+    <div class="kpi-valor">2.3%</div>
+    <div class="kpi-tendencia negativa">
+        -0,2% em relação ao mês anterior
+   
+    </div>
+    </section>    
+
+    <div id='app'>Relatórios e Estatísticas</div>
+</section> 
+<button
+onclic="ExportarTabelaParaCSV()"
+>Exportar para CSV</button>
+<table id="tabelaDados">
+   <thead>
+    <tr>
+       <th>ID</th>
+       <th>produtos</th>
+       <th>preços</th>
+      </tr>
+    </thead>
+    <tbody\>
+      <tr>
+         <td>101</td>
+         <td>notebbok x</td>
+         <td>2500.00</td>
+         </tr>
+         <tr>
+    <td>102</td>
+    <td>monitor y</td>
+    <td>850.50</td>
+     </tr>      
+     </tbody>
+   </table>
+
+    <script type='module' src='./app.js'></script>
+</body>
+</html>
