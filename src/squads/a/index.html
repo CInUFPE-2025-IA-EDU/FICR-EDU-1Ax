@@ -1,73 +1,81 @@
-<!doctype html><meta charset='utf-8'>
-<head>
-<title>Dashboard Principal</title>
-<link rel='stylesheet' href='./style.css'>
-</head>
-<body>
-<header>
-<h1>Dashboard Principal</h1> 
-</header>
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard Exemplo</title>
-  
-</head>
-<body>
-
     <!DOCTYPE html>
     <html lang="pt-BR">
     <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Dashboard Exemplo</title>
-     
+      <link rel='stylesheet' href='./style.css'>
     </head>
-    <body>
-    
-      <main class="container">
+   
         
-        <section class="card">
-          <h2>Total de Vendas</h2>
-            <div class="totais">
-            <span class="numero">Livros Comprados:</span>
-            <p>20</p>
-            <span class="numero">Livros pendentes </span>
-            <p>20</p>
-            <span class="numero">Livros lidos </span>
-            <p>25</p>
-            <span class="numero">Livros danificados </span>
-            <p>1</p>
-         
-        </div>
+        
+          <header>
+            <h1> Dashboard da Biblioteca</h1>
+            <p>Resumo de informações e cadastro rápido de livros</p>
+          </header>
+        
+         <main>
+          <section class="cards">
+            <div class="card">
+              <h2>3.258</h2>
+              <p>Livros cadastrados</p>
+            </div>
+            <div class="card">
+              <h2>124</h2>
+              <p>Empréstimos ativos</p>
+            </div>
+            <div class="card">
+              <h2>876</h2>
+              <p>Usuários registrados</p>
+            </div>
+            <div class="card">
+              <h2>9</h2>
+              <p>Livros atrasados</p>
+            </div>
+          </section>
+        
+          
+          <section class="atividades">
+            <h2> Últimas atividades</h2>
+            <ul>
+              <li>Novo livro adicionado: <b>“Dom Casmurro”</b></li>
+              <li> Empréstimo: <b>“O Pequeno Príncipe”</b> para Ana Souza</li>
+              <li> Novo usuário: <b>Marcos Oliveira</b></li>
+              <li> Livro devolvido com atraso: <b>“1984”</b></li>
+            </ul>
+          </section>
+         </main>
 
-        </section>
+         <section class="formulario">
+            <h2> Cadastrar Novo Livro</h2>
+            <form>
+              <label for="titulo">Título do livro:</label>
+              <input type="text" id="titulo" name="titulo" placeholder="Ex: O Senhor dos Anéis" required>
+        
+              <label for="autor">Autor:</label>
+              <input type="text" id="autor" name="autor" placeholder="Ex: J.R.R. Tolkien" required>
+        
+              <label for="categoria">Categoria:</label>
+              <select id="categoria" name="categoria">
+                <option>Ficção</option>
+                <option>Romance</option>
+                <option>Ciência</option>
+                <option>História</option>
+                <option>Outro</option>
+              </select>
+        
+              <label for="ano">Ano de publicação:</label>
+              <input type="number" id="ano" name="ano" placeholder="Ex: 1954" min="1500" max="2025">
+        
+              <button type="submit">Cadastrar Livro</button>
+            </form>
+          </section>
+        
+        <footer class="rodape"> Biblioteca Ficr </footer> 
+          <script type='module' src='./app.js'></script>
+        
+        </body>
+        </html>
+     
     
-       
-        <section class="card atividades">
-          <h2>Últimas Atividades</h2>
-          <ul>
-            <li>Pedido #302 concluído</li>
-            <li> Novo comentário no blog</li>
-            <li> Produto enviado</li>
-            <li> Novo usuário cadastrado</li>
-            <li>Emprestimo realizado</li>
-
-          </ul>
-        </section>
-      </main>
     
-    </body>
-    </html>
-    
-    
-  </main>
-
-</body>
-</html>
-
-
-    <script type='module' src='./app.js'></script>
-</body>
