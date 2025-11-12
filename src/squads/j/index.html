@@ -1,4 +1,75 @@
-<!doctype html><meta charset='utf-8'><title>Administração</title>
-<div id='app'>Administração</div>
-<script type='module' src='./app.js'></script>
-<link rel='stylesheet' href='./style.css'>
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administração</title>
+    <script type='module' src='./app.js'></script>
+    <link rel='stylesheet' href='./style.css'>
+</head>
+
+<body>
+
+    <div id='app'>Administração</div>
+
+    <header>
+        <h1>Formulário de administração</h1>
+    </header>
+
+    <main>
+        <div class="cadastro">
+            <form>
+                <div class="usuario">
+                    <label for="id1">Nome Completo:</label>
+                    <input type="text" id="id1" placeholder="Digite seu nome">
+                </div>
+
+                <div class="email">
+                    <label for="id2">Endereço de E-mail:</label>
+                    <input type="text" id="id2" placeholder="Digite seu e-mail">
+                </div>
+
+                <div class="cpf">
+                    <label for="id3">Número do CPF:</label>
+                    <input type="text" id="id3" placeholder="000.000.000-00">
+                </div>
+
+                <div class="numero">
+                    <label for="id4">Numero de telefone:</label>
+                    <input type="text" id="id4" placeholder="(00)00000-0000">
+                </div>
+
+                <div class="rua">
+                    <label for="id6">Rua:</label>
+                    <input type="text" id="id6" placeholder="Digite sua rua">
+                </div>
+
+                <div class="bairro">
+                    <label for="id7">Bairro:</label>
+                    <input type="text id" id="id7" placeholder="Digite seu bairro">
+                </div>
+
+                <div class="cidade">
+                    <label for="id5">Cidade:</label>
+                    <input type="text" id="id5" placeholder="00000-000">
+                </div>
+
+                <div class="botao">
+                    <button type="submit">Enviar</button>
+                </div>
+
+                <div class="botao-limpar">
+                    <button type="submit">Limpar</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <i>Formulário para fins administrativos</i>
+    </footer>
+
+</body>
+
+</html>
