@@ -8,9 +8,9 @@
     "format:check": "prettier --check \"src/**/*.{js,css,html}\"",
     "html:validate": "html-validate \"src/**/*.html\""
   },
-  "devDependencies": {
-    "eslint": "^9.11.1",
-    "prettier": "^3.3.3",
-    "html-validate": "^9.0.0"
-  }
+"devDependencies": {
+  "eslint": "^8.57.0",
+  "prettier": "^3.3.3",
+  "html-validate": "^9.0.0"
+}
 }
