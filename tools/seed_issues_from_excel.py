@@ -37,17 +37,31 @@ def ensure_label(headers, repo, name, color="5865F2", desc=None):
             raise
 
 def find_issue_by_seed(headers, repo, seed_uid):
-    # 1) procurar por label seed:<uid>
-    q = f'repo:{repo} label:"seed:{seed_uid}" is:issue'
-    r = gh(headers, "GET", "/search/issues", params={"q": q})
-    items = r.json().get("items", [])
-    if items: return items[0]
-
-    # 2) fallback: buscar por texto no corpo (seed_id: <uid>)
-    q = f'repo:{repo} "{seed_uid}" in:body is:issue'
-    r = gh(headers, "GET", "/search/issues", params={"q": q})
-    items = r.json().get("items", [])
-    return items[0] if items else None
+    """
+    Evita a Search API (que pode dar 403 no GITHUB_TOKEN).
+    Procura a issue pela label 'seed:<uid>' usando a listagem normal.
+    """
+    label = f"seed:{seed_uid}"
+    page = 1
+    per_page = 50
+    while True:
+        r = gh(
+            headers, "GET",
+            f"/repos/{repo}/issues",
+            params={"state": "all", "labels": label, "per_page": per_page, "page": page}
+        )
+        items = r.json()
+        if not items:
+            return None
+        for it in items:
+            # garante que é issue (não PR) e que tem a label exata
+            if "pull_request" not in it:
+                labels = {l["name"] for l in it.get("labels", [])}
+                if label in labels:
+                    return it
+        if len(items) < per_page:
+            return None
+        page += 1
 
 def build_body(row):
     parts = []
