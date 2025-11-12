@@ -1,4 +1,150 @@
-<!doctype html><meta charset='utf-8'><title>Sistema de Avaliações</title>
-<div id='app'>Sistema de Avaliações</div>
-<script type='module' src='./app.js'></script>
-<link rel='stylesheet' href='./style.css'>
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Avaliações</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div id='app'>
+        <main>
+            <h1>Avaliações</h1>
+
+            <div class="avaliacao">
+                <div class="avaliacao__container">
+                    <ul class="avaliacao__lista">
+
+                        <div class="avaliacao__item">
+                            <li>                                
+                                <div class="formulario__item--avaliacao">
+                                    <h3>Amei!!!!</h3>                                    
+                                    <p>Maravilhoso o livro. Fiquei apaixonada.</p>
+                                </div>
+
+                                <div class="avaliacao__item--detalhes">
+                                    <span>Clara</span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                </div>
+                            </li>
+                        </div>
+
+                        <div class="avaliacao__item">
+                            <li>                                
+                                <div class="formulario__item--avaliacao">
+                                    <h3>Interssante</h3>                                    
+                                    <p>Fiquei bastante empolgada com a leitura. Vou ler outros do autor.</p>
+                                </div>
+
+                                <div class="avaliacao__item--detalhes">
+                                    <span>Camila</span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                </div>
+                            </li>
+                        </div>
+
+                        <div class="avaliacao__item">
+                            <li>                                
+                                <div class="formulario__item--avaliacao">
+                                    <h3>Gostei bastante</h3>                                    
+                                    <p>Gostei um pouco do livro. Preciso ler mais. O autor enrolou muito.</p>
+                                </div>
+
+                                <div class="avaliacao__item--detalhes">
+                                    <span>Perazzo</span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                </div>
+                            </li>
+                        </div>
+                        
+                        <div class="avaliacao__item">
+                            <li>                                
+                                <div class="formulario__item--avaliacao">
+                                    <h3>Mais ou Menos</h3>                                    
+                                    <p>O livro que li foi muito bom, mas já li melhores</p>
+                                </div>
+
+                                <div class="avaliacao__item--detalhes">
+                                    <span>Jonas</span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                </div>
+                            </li>
+                        </div>
+
+                        <div class="avaliacao__item">
+                            <li>                                
+                                <div class="formulario__item--avaliacao">
+                                    <h3>Uma bosta</h3>                                    
+                                    <p>O livro foi uma merda total</p>
+                                </div>
+
+                                <div class="avaliacao__item--detalhes">
+                                    <span>Edson</span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                </div>
+                            </li>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </main>
+
+        <div class="formulario">
+            <h3 class="formulario__titulo">Faça sua avaliação!</h3>
+            <form action="#" method="post" class="formulario__corpo">
+                <div class="formulario__grupo">
+                    <label for="titulo">Titulo</label>
+                    <input type="text" id="titulo" name="titulo" placeholder="Título da avaliação" required>
+                    <textarea name="text" id="comentario" placeholder="Escreva sua avaliação" required></textarea>
+                </div>
+
+                <div class="formulario__acoes--estrelas">
+                    <input type="radio" id="estrela" name="fb" value="" checked/>
+
+                    <label for="estrela-1"><i class="fa fa-star"></i></label>
+                    <input type="radio" id="estrela-1" name="estrela" value="1"/>
+
+                    <label for="estrela-2"><i class="fa fa-star"></i></label>
+                    <input type="radio" id="estrela-2" name="estrela" value="2"/>
+
+                    <label for="estrela-3"><i class="fa fa-star"></i></label>
+                    <input type="radio" id="estrela-3" name="estrela" value="3"/>
+
+                    <label for="estrela-4"><i class="fa fa-star"></i></label>
+                    <input type="radio" id="estrela-4" name="estrela" value="4"/>
+
+                    <label for="estrela-5"><i class="fa fa-star"></i></label>
+                    <input type="radio" id="estrela-5" name="estrela" value="5"/>
+                </div>
+
+                <div class="formulario__acoes--botoes">
+                    <button type="submit" class="btn btn--primario formulario__enviar">
+                        Enviar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script type='module' src='./app.js'></script>
+</body>
+</html>
