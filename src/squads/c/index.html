@@ -1,4 +1,32 @@
-<!doctype html><meta charset='utf-8'><title>Sistema de Empréstimos</title>
+<!doctype html>
+<head>
+<meta charset='utf-8'><title>Sistema de Empréstimos</title>
 <div id='app'>Sistema de Empréstimos</div>
 <script type='module' src='./app.js'></script>
 <link rel='stylesheet' href='./style.css'>
+</head>
+<body>
+    <header>
+      <div class="container"></div>
+       <h1>📚BIBLIOTECA FICR</h1>
+       <div class="tabs">
+        <button class="tab-button active"><a href="">Novo Empréstimo</a></button>
+        <button class="tab-button refund"><a href="">Devolução</a></button>
+        <button class="tab-button user"><a href="">Histórico do Usuário</a></button>
+       </div>
+</header>
+<main>
+    <form action="#">
+        <label for="Empréstimo"></label>
+        <input type="text" id="Empréstimo" placeholder="Nome do Livro" required>
+        <label for="Devolução"></label>
+        <input type="text" id="Devolução" placeholder="Devolução" required>
+        <label for="Usuário"></label>
+        <input type="text" id="Usuário" placeholder="Histórico do Usuário" required>
+    </form>
+
+</main>
+<footer>
+
+</footer>
+</body>
