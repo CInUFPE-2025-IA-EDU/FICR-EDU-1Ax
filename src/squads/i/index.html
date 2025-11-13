@@ -1,4 +1,53 @@
-<!doctype html><meta charset='utf-8'><title>Sistema de Doações</title>
+<!DOCTYPE html>
+<meta charset='utf-8'>
+<title>Sistema de Doações</title>
 <div id='app'>Sistema de Doações</div>
 <script type='module' src='./app.js'></script>
 <link rel='stylesheet' href='./style.css'>
+<head>
+    <body>
+        <header>
+            <h1>Doação de Livros</h1>
+        </header>
+
+    <main>
+        <h2>Preencha seus Dados e a Data da Doação</h2>
+
+        <img src="https://s2.glbimg.com/02Hn5MMLEBV7waxnymNSGDSDt2w=/620x413/smart/e.glbimg.com/og/ed/f/original/2017/12/20/livros_-_wikimedia_commons.jpg" alt="livros empilhados.">
+        <form action="/processar_doacao">
+
+            <div>
+                <label for="nome">Seu Nome:</label>
+                <input type="text" id="nome" name="nome" required aria-invalid="false">
+            </div>
+
+            <div>
+                <label for="email">Seu E-mail:</label>
+                <input type="email" id="email" name="email" required aria-invalid="false">
+            </div>
+
+            <div>
+                <label for="telefone">Telefone:</label>
+                <input type="tel" id="telefone" name="telefone" aria-invalid="false">
+            </div>
+
+            <div>
+                <label for="data_doacao">Data da Doação:</label>
+                <input type="date" id="data_doacao" name="data_doacao" required aria-invalid="false">
+            </div>
+
+            <div>
+                <button type="submit">Enviar Doação</button>
+
+                <button type="reset">Limpar</button>
+            </div>
+        </form>
+    </main>
+
+    <footer>
+        <p>Agradecemos sua generosidade!</p>
+    </footer>
+
+        </body>
+    </head>
+</html>
