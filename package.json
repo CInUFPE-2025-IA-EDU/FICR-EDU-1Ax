@@ -1,5 +1,6 @@
 {
   "name": "ficr-edu-1ax",
+  "type": "module",
   "private": true,
   "scripts": {
     "lint": "eslint \"src/**/*.js\"",
