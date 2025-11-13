@@ -1,4 +1,43 @@
-<!doctype html><meta charset='utf-8'><title>Sistema de Reservas</title>
-<div id='app'>Sistema de Reservas</div>
-<script type='module' src='./app.js'></script>
-<link rel='stylesheet' href='./style.css'>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservas de Livros</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>📚 Lista de Livros</h1>
+
+    <div class="livros">
+        <div class="livro">
+            <h3>Livro A</h3>
+            <button onclick="abrirModal(this)">Reservar</button>
+        </div>
+
+        <div class="livro">
+            <h3>Livro B</h3>
+            <button onclick="abrirModal(this)">Reservar</button>
+        </div>
+
+        <div class="livro">
+            <h3>Livro C</h3>
+            <button onclick="abrirModal(this)">Reservar</button>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <h3>Deseja reservar este livro?</h3>
+            <div class="botoes">
+                <button class="confirmar" onclick="confirmarReserva()">Confirmar</button>
+                <button class="cancelar" onclick="fecharModal()">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    
+    <script src="app.js"></script>
+</body>
+</html>
